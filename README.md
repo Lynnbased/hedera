@@ -458,8 +458,8 @@ CraftLink uses Merkle trees to ensure data integrity:
 
 **CraftLink** is built by passionate developers committed to empowering the global artisan community.
 
-  - **Author**: Ekarika Nsemeke
-  - **GitHub**: [github.com/xeladev4](https://github.com/xeladev4)
+  - **Author**: Ebele Lynda Okolo
+  - **GitHub**: [https://github.com/Lynnbased/hedera]
 
 -----
 
