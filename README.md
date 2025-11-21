@@ -428,29 +428,237 @@ CraftLink uses Merkle trees to ensure data integrity:
 
 *(Long-Term Vision, Hedera's Role, and Measurable Outcomes sections remain the same, with adjusted language for "global" instead of "African")*
 
------
-
 ## 🔐 Environment Variables
 
-*(This section remains the same)*
 
------
+
+### **Smart Contracts**
+
+```env
+
+RPC_URL=https://testnet.hashio.io/api    # Hedera Testnet RPC endpoint
+
+PRIVATE_KEY=                              # Deployer private key
+
+ETHERSCAN_API_KEY=                        # For contract verification (if supported)
+
+```
+
+
+
+### **Backend**
+
+```env
+
+PORT=3001
+
+MONGODB_URI=                # MongoDB connection string
+
+NODE_ENV=development
+
+```
+
+
+
+### **Relayer**
+
+```env
+
+PORT=3005
+
+RPC_URL=https://testnet.hashio.io/api    # Hedera Testnet RPC endpoint
+
+PRIVATE_KEY_PASSWORD=                     # Password for encrypted key
+
+ENCRYPTED_KEY_JSON=                       # Encrypted relayer private key
+
+TOKEN_ADDRESS=0xd1fb7489D8689c45082Ea68dC025247d4143f15E
+
+REGISTRY_ADDRESS=0x9c78Bbfc9a101f0C467560BD93401B72cC4152C1
+
+REVIEW_SYSTEM_ADDRESS=0x6182AfDA6817a0a78a5e87Da57DD19F05bfCa9cf
+
+GIG_MARKETPLACE_ADDRESS=0x78b06bfd164Ae7dee46E606da3e4d2Cb59997cD2
+
+PAYMENT_PROCESSOR_ADDRESS=0x6976762d8dF143771eB8a2a930061A57806b6fd4
+
+CRAFT_COIN_ADDRESS=0x77A5a2b9DCbe2B3e14057F6774D050C5f0f66336
+
+```
+
+
+
+### **Frontend**
+
+```env
+
+NEXT_PUBLIC_BACKEND_URL=http://localhost:3001    # Backend API URL
+
+NEXT_PUBLIC_RELAYER_URL=http://localhost:3005    # Relayer API URL
+
+NEXT_PUBLIC_RPC_URL=https://testnet.hashio.io/api    # Hedera Testnet RPC endpoint
+
+NEXT_PUBLIC_CHAIN_ID=296                          # Network chain ID (296 for Hedera Testnet)
+
+THIRDWEB_CLIENT_ID=                               # Thirdweb client ID
+
+THIRDWEB_SECRET_KEY=                              # Thirdweb secret key
+
+```
+
+
+
+---
+
+
 
 ## 🌐 Deployment
 
-*(This section remains the same)*
 
------
+
+### **Smart Contracts**
+
+
+
+```bash
+
+cd smart_contract
+
+
+
+# Deploy to Hedera Testnet
+
+forge script script/Deploy.s.sol \
+
+  --rpc-url https://testnet.hashio.io/api \
+
+  --broadcast \
+
+  --verify
+
+
+
+# Verify contracts on HashScan
+
+# Note: Contract verification on Hedera uses HashScan
+
+# Visit https://hashscan.io/testnet to view deployed contracts
+
+```
+
+
+
+### **Backend & Relayer**
+
+
+
+Both are configured for **Vercel** deployment:
+
+
+
+```bash
+
+# Deploy backend
+
+cd backend
+
+vercel --prod
+
+
+
+# Deploy relayer
+
+cd relayer
+
+vercel --prod
+
+```
+
+
+
+**Note**: Update environment variables in Vercel dashboard.
+
+
+
+### **Frontend**
+
+
+
+```bash
+
+cd frontend
+
+
+
+# Build production
+
+npm run build
+
+
+
+# Deploy to Vercel
+
+vercel --prod
+
+```
+
+
+
+### **MongoDB**
+
+
+
+Use **MongoDB Atlas** for production:
+
+1. Create cluster at https://cloud.mongodb.com
+
+2. Whitelist Vercel IPs
+
+3. Update `MONGODB_URI` in environment variables
+
+
+
+---
+
+
 
 ## 🤝 Contributing
 
-*(This section remains the same)*
 
------
 
-## 📝 License
+We welcome contributions! Please follow these steps:
 
-*(This section remains the same)*
+
+
+1. **Fork the repository**
+
+2. **Create a feature branch** (`git checkout -b feature/amazing-feature`)
+
+3. **Commit your changes** (`git commit -m 'Add amazing feature'`)
+
+4. **Push to the branch** (`git push origin feature/amazing-feature`)
+
+5. **Open a Pull Request**
+
+
+
+### **Development Guidelines**
+
+
+
+- Follow existing code style and conventions
+
+- Write tests for new features
+
+- Update documentation as needed
+
+- Ensure all tests pass before submitting PR
+
+- Use meaningful commit messages
+
+
+
+---
 
 -----
 
