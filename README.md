@@ -14,7 +14,7 @@ CraftLink is a decentralized marketplace leveraging **Hedera Smart Contract Serv
 
 -----
 
- 📊 **[Pitch Deck](https://gamma.app/docs/CraftLink-wrpqpq1ykrbe7yo?mode=doc)** | 🔗 **[Live Demo](https://craftlink-coral.vercel.app)**
+ 📊 **[Pitch Deck](https://www.canva.com/design/DAG5WQZIg6U/hOt_UunMyq0ELYMeh55ngA/edit?utm_content=DAG5WQZIg6U&utm_campaign=designshare&utm_medium=link2&utm_source=sharebutton)** | 🔗 **[Live Link](https://craftlink-coral.vercel.app)**    🔗 **[Live Demo](https://youtu.be/a2v7FuK_O_Y)**  
 
 ## 📋 Table of Contents
 
