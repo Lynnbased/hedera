@@ -1,8 +1,14 @@
-# Compiler files
+# Rust
+/target/
+Cargo.lock
+
+# Soroban
+.wasm
+soroban-test-ledger/
+
+# Solidity (legacy)
 cache/
 out/
-
-# Ignores development broadcast logs
 !/broadcast
 /broadcast/*/31337/
 /broadcast/**/dry-run/
