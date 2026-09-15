@@ -24,7 +24,7 @@ impl PaymentProcessorContract {
 
     fn require_relayer(env: &Env) {
         let relayer: Address = env.storage().instance().get(&Symbol::new(&env, "relayer")).unwrap();
-        assert_eq!(env.current_contract_address(), relayer, "Caller is not the relayer");
+        assert_eq!(env.invoker().into_address(), relayer, "Caller is not the relayer");
     }
 
     pub fn create_payment_for(env: &Env, client: Address, amount: i128) {

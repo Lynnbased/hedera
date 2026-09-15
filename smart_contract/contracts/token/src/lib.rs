@@ -19,12 +19,12 @@ impl TokenContract {
 
     fn require_admin(env: &Env) {
         let admin: Address = env.storage().instance().get(&Symbol::new(&env, "admin")).unwrap();
-        assert_eq!(env.current_contract_address(), admin, "Caller is not the admin");
+        assert_eq!(env.invoker().into_address(), admin, "Caller is not the admin");
     }
 
     fn require_relayer(env: &Env) {
         let relayer: Address = env.storage().instance().get(&Symbol::new(&env, "relayer")).unwrap();
-        assert_eq!(env.current_contract_address(), relayer, "Caller is not the relayer");
+        assert_eq!(env.invoker().into_address(), relayer, "Caller is not the relayer");
     }
 
     pub fn balance(env: &Env, id: Address) -> i128 {
